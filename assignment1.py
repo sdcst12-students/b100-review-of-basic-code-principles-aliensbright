@@ -13,3 +13,48 @@ Your program should ask the user for
 * The program will calculate the amount of interest earned and display it.
 * Appropriate formatting of the output is a requirement for this assignment
 """
+
+while True:
+  try:
+    intin=input("Enter the initial investment: ")
+    intin=float(intin)
+    break
+  except:
+    print('Invalid value.\nTry again')
+
+while True:
+  try:
+    rate=input('\nEnter the interest rate as a percentage.\nOnly enter a number: ')
+    rate=float(rate)
+    break
+  except:
+    print('\nInvalid value.\nTry again')
+
+while True:
+  LoT = input('\nWill the time be measured in years, months, or days. \nEnter Y for years, M for months, and D for days: ')
+  LoT = LoT.lower()
+  if LoT=="y":
+    t=1
+    break
+  elif LoT=="m":
+    t=12
+    break
+  elif LoT=="d":
+    t=365
+    break
+  else:
+    print("Invalid Value.\nTry again.")
+
+while True:
+  Time = input('\nHow long will the investment be.\nEnter value as a number: ')
+  Time = float(Time)
+  if LoT=="y":
+
+    break
+  else:
+    print("Invalid Value.\nTry again.")
+
+
+
+A = intin*(rate/100)*Time/t
+print(A)
