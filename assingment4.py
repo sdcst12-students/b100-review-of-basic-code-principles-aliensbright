@@ -22,3 +22,40 @@ How many months will it take him to pay off the car.  How much interest has he p
 He will have paid 21711.60 in interest
 """
 
+while True:
+  try:
+    debt=input("Enter the initial debt: ")
+    debt=float(debt)
+    assert debt>0
+    break
+  except:
+    print('Invalid value.\nTry again')
+
+while True:
+  try:
+    rate=input('\nEnter the interest rate as a percentage.\nOnly enter a number: ')
+    rate=float(rate)
+    assert rate<100
+    assert rate>0
+    break
+  except:
+    print('\nInvalid value.\nTry again')
+
+while True:
+  repay = input('\nEnter the annual repayment.\nEnter value as a whole number: ')
+  try:
+    repay = float(repay)
+    assert repay>0
+    break
+  except:
+    print("Invalid Value.\nTry again.")
+new=debt
+years=0
+while new>0:
+  new=new-(debt-repay)*rate/100
+  new=round(new,2)
+  years=years+1
+
+print(f"\nTotal repayment : ${repay*years}")
+print(f"\nTotal interest paid : ${repay*years-debt}")
+print(f"\nIt will take {years} years to repay the debt\n")
