@@ -22,3 +22,42 @@ rate: 5%
 10 years
 final balance: 1320.68
 """
+
+while True:
+  try:
+    intin=input("Enter the annual investment: ")
+    intin=float(intin)
+    assert intin>0
+    break
+  except:
+    print('Invalid value.\nTry again')
+
+while True:
+  try:
+    rate=input('\nEnter the interest rate as a percentage.\nOnly enter a number: ')
+    rate=float(rate)
+    assert rate<100
+    assert rate>0
+    break
+  except:
+    print('\nInvalid value.\nTry again')
+
+while True:
+  Time = input('\nHow long will the investment be in years.\nEnter value as a whole number: ')
+  try:
+    Time = int(Time)
+    assert Time>0
+    Time = Time + 1
+    break
+  except:
+    print("Invalid Value.\nTry again.")
+
+x=intin
+i=1
+
+while i!=Time:
+  x=x+x*rate/100
+  x=round(x,2)
+  print(f'Year {i}, Money=${x}\n')
+  x=x+intin
+  i=i+1

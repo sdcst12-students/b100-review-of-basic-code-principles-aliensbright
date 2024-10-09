@@ -26,6 +26,8 @@ while True:
   try:
     rate=input('\nEnter the interest rate as a percentage.\nOnly enter a number: ')
     rate=float(rate)
+    assert rate<100
+    assert rate>0
     break
   except:
     print('\nInvalid value.\nTry again')
@@ -47,14 +49,16 @@ while True:
 
 while True:
   Time = input('\nHow long will the investment be.\nEnter value as a number: ')
-  Time = float(Time)
-  if LoT=="y":
-
+  try:
+    Time = float(Time)
+    assert Time>0
     break
-  else:
+  except:
     print("Invalid Value.\nTry again.")
 
 
 
 A = intin*(rate/100)*Time/t
-print(A)
+A = round(A,2)
+print('The total amount of interest earned is $',A)
+print(f'\nYour total amount will be ${A+intin}')
